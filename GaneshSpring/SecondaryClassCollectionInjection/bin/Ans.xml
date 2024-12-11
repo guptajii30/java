@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+      xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:context = "http://www.springframework.org/schema/context"
+      xsi:schemaLocation = "http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+      
+	<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define Answer beans -->
+    <bean id="answer1" class="myPackSCC1.Answer">
+        <property name="nm" value="What is Java"/>
+    </bean>
+
+    <bean id="answer2" class="myPackSCC1.Answer">
+        <property name="id" value="20"/>
+        <property name="by" value="name"></property>
+    </bean>
+
+    <!-- Define Question1 bean with a list of Answer beans -->
+    <bean id="obj1" class="myPackSCC1.Question1">
+        <property name="ans">
+            <list>
+            <value>Java is Programming Language </value>
+			<value>Java is Platform </value>
+			<value>Java is DataBase </value>
+                <ref bean="answer1"/>
+                <ref bean="answer2"/>
+            </list>
+        </property>
+    </bean>
+</beans>
+
+</beans>
